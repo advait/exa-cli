@@ -1,8 +1,8 @@
 import { Args } from "@oclif/core";
-import { requestJson } from "../lib/api";
-import { BaseCommand } from "../lib/command";
-import { buildContentsOptions } from "../lib/contents";
-import { contentsFlags, findSimilarFlags, globalFlags } from "../lib/flags";
+import { requestJson } from "../lib/api.js";
+import { BaseCommand } from "../lib/command.js";
+import { buildContentsOptions } from "../lib/contents.js";
+import { contentsFlags, findSimilarFlags, globalFlags } from "../lib/flags.js";
 
 export default class FindSimilar extends BaseCommand {
   static description = "Find similar links to a URL";
@@ -90,7 +90,8 @@ export default class FindSimilar extends BaseCommand {
 }
 
 function writeFindSimilarPlain(data: unknown): void {
-  const results = typeof data === "object" && data !== null ? (data as { results?: unknown }).results : undefined;
+  const results =
+    typeof data === "object" && data !== null ? (data as { results?: unknown }).results : undefined;
   if (!Array.isArray(results)) {
     return;
   }

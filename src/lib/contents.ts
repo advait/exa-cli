@@ -144,7 +144,8 @@ function buildContextOptions(flags: Flags): boolean | Record<string, unknown> | 
 }
 
 function buildExtrasOptions(flags: Flags): Record<string, unknown> | undefined {
-  const hasExtras = flags["extras-links"] !== undefined || flags["extras-image-links"] !== undefined;
+  const hasExtras =
+    flags["extras-links"] !== undefined || flags["extras-image-links"] !== undefined;
   if (!hasExtras) {
     return undefined;
   }

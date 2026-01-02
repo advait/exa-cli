@@ -1,6 +1,6 @@
 import { Command } from "@oclif/core";
-import { ApiError, type OutputMode, requireApiKey } from "./api";
-import { formatApiError, resolveOutputMode, writeError, writeJson } from "./output";
+import { ApiError, type OutputMode, requireApiKey } from "./api.js";
+import { formatApiError, resolveOutputMode, writeError, writeJson } from "./output.js";
 
 export abstract class BaseCommand extends Command {
   protected outputMode(flags: { plain?: boolean }): OutputMode {

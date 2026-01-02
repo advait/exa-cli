@@ -1,8 +1,8 @@
 import { Args } from "@oclif/core";
-import { requestJson } from "../lib/api";
-import { BaseCommand } from "../lib/command";
-import { buildContentsOptions } from "../lib/contents";
-import { contentsFlags, globalFlags } from "../lib/flags";
+import { requestJson } from "../lib/api.js";
+import { BaseCommand } from "../lib/command.js";
+import { buildContentsOptions } from "../lib/contents.js";
+import { contentsFlags, globalFlags } from "../lib/flags.js";
 
 export default class Contents extends BaseCommand {
   static description = "Fetch content for URLs";

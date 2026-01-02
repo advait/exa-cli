@@ -1,8 +1,8 @@
 import { Args } from "@oclif/core";
-import { requestJson } from "../lib/api";
-import { BaseCommand } from "../lib/command";
-import { buildContentsOptions } from "../lib/contents";
-import { contentsFlags, globalFlags, searchFlags } from "../lib/flags";
+import { requestJson } from "../lib/api.js";
+import { BaseCommand } from "../lib/command.js";
+import { buildContentsOptions } from "../lib/contents.js";
+import { contentsFlags, globalFlags, searchFlags } from "../lib/flags.js";
 
 const categoryMap: Record<string, string> = {
   "research-paper": "research paper",
@@ -112,7 +112,8 @@ export default class Search extends BaseCommand {
 }
 
 function writeSearchPlain(data: unknown): void {
-  const results = typeof data === "object" && data !== null ? (data as { results?: unknown }).results : undefined;
+  const results =
+    typeof data === "object" && data !== null ? (data as { results?: unknown }).results : undefined;
   if (!Array.isArray(results)) {
     return;
   }

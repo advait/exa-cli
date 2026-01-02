@@ -18,7 +18,7 @@ npx exa-cli --help
 Local dev:
 
 ```bash
-bun run bin/exa --help
+bun run dev -- --help
 ```
 
 ## Auth

@@ -18,7 +18,12 @@ export abstract class BaseCommand extends Command {
       return requireApiKey();
     } catch (error) {
       const message = error instanceof Error ? error.message : "EXA_API_KEY is required";
-      this.fail(message, 2, flags);
+      this.failWithHint(
+        message,
+        "Set EXA_API_KEY in your environment. Example: export EXA_API_KEY=... (see https://docs.exa.ai/reference/getting-started)",
+        2,
+        flags,
+      );
       return "";
     }
   }
@@ -30,6 +35,17 @@ export abstract class BaseCommand extends Command {
   protected fail(message: string, exitCode: number, flags: { plain?: boolean }): never {
     const mode = this.outputMode(flags);
     writeError(mode, { error: message });
+    this.exit(exitCode);
+  }
+
+  protected failWithHint(
+    message: string,
+    hint: string,
+    exitCode: number,
+    flags: { plain?: boolean },
+  ): never {
+    const mode = this.outputMode(flags);
+    writeError(mode, { error: message, hint });
     this.exit(exitCode);
   }
 

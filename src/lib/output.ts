@@ -4,6 +4,7 @@ type ErrorPayload = {
   error: string;
   status?: number;
   details?: unknown;
+  hint?: string;
 };
 
 export function resolveOutputMode(flags: { plain?: boolean }): OutputMode {
@@ -17,6 +18,9 @@ export function writeJson(data: unknown): void {
 export function writeError(mode: OutputMode, error: ErrorPayload): void {
   if (mode === "plain") {
     process.stderr.write(`${error.error}\n`);
+    if (error.hint) {
+      process.stderr.write(`hint: ${error.hint}\n`);
+    }
     return;
   }
 

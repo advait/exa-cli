@@ -28,5 +28,5 @@
     "additionalVersionFlags": ["-v"],
     "helpClass": "./dist/lib/help.js"
   },
-  "files": ["dist", "README.md", "docs/spec.md", "package.json"]
+  "files": ["dist", "README.md", "package.json"]
 }

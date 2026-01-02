@@ -21,6 +21,13 @@ Local dev:
 bun run dev -- --help
 ```
 
+Global install (optional):
+
+```bash
+npm install -g exa-cli
+exa --help
+```
+
 ## Auth
 
 Set your API key in the environment:
@@ -93,7 +100,8 @@ exa contents https://openai.com --text --dry-run
 
 ```bash
 bun install
-bun run bin/exa --help
+bun run build
+bun run dev -- --help
 bun run lint
 bun run format
 ```

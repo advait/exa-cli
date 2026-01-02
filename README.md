@@ -104,3 +104,9 @@ bun run dev -- --help
 bun run lint
 bun run format
 ```
+
+## Agent Skill
+
+This repo includes an Agent Skill for Claude Code and similar environments:
+
+- `skills/exa-search/SKILL.md`

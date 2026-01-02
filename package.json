@@ -24,7 +24,9 @@
   "oclif": {
     "commands": "./dist/commands",
     "bin": "exa",
-    "additionalHelpFlags": ["-h"]
+    "additionalHelpFlags": ["-h"],
+    "additionalVersionFlags": ["-v"],
+    "helpClass": "./dist/lib/help.js"
   },
   "files": ["dist", "README.md", "docs/spec.md", "package.json"]
 }

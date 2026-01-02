@@ -23,6 +23,7 @@ Goal: design a non-interactive, agent-first CLI for Exa's Search API using bun +
 
 ## 5. Global flags
 - `-h, --help`: show help; ignores other args.
+- `-v, --version`: print version to stdout.
 - `--version`: print version to stdout.
 - `--json`: default output (pass-through Exa response JSON).
 - `--plain`: stable line-based output (see I/O contract).

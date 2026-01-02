@@ -1,38 +1,16 @@
 # exa-cli
 
-Simple CLI wrapper around the [Exa Search API](https://docs.exa.ai/reference/getting-started).
-
-Not to be confused with the `exa` terminal replacement for `ls`.
-
-This CLI is agent-first, non-interactive, and defaults to JSON output.
+Simple agent-first CLI wrapper around the [Exa Search API](https://docs.exa.ai/reference/getting-started) (not to be confused with the [exa](https://github.com/ogham/exa) terminal replacement for `ls`).
 
 ## Run
 
 ```bash
-bunx exa-cli --help
 npx exa-cli --help
-```
 
-For command-specific help and examples:
+# Install globally
+npm install -g exa-cli
 
-```bash
-exa help
-exa help search
-exa -h
-```
-
-Local dev:
-
-```bash
-bun run dev -- --help
-```
-
-## Auth
-
-Set your API key in the environment:
-
-```bash
-export EXA_API_KEY=...
+exa search "DigiKey link for Noridc NRF54L15"  # Outputs JSON
 ```
 
 ## Commands
@@ -41,6 +19,12 @@ export EXA_API_KEY=...
 - `contents` - fetch page contents for URLs
 - `find-similar` - find similar links to a URL
 - `answer` - Q&A grounded by search results
+
+## Agent Skill
+
+This repo includes an [Agent Skill](https://agentskills.io/home) for Claude Code and similar environments:
+
+- `skills/exa-search/SKILL.md`
 
 ## Examples
 
@@ -89,11 +73,13 @@ exa search "openai" --num-results 1 --dry-run
 exa contents https://openai.com --text --dry-run
 ```
 
-## Output modes
+## Auth
 
-- Default is JSON to stdout
-- `--plain` emits stable, line-based output
-- Errors go to stderr (JSON when not using `--plain`)
+Set your API key in the environment:
+
+```bash
+export EXA_API_KEY=...
+```
 
 ## Development
 
@@ -105,8 +91,9 @@ bun run lint
 bun run format
 ```
 
-## Agent Skill
+## Output modes
 
-This repo includes an Agent Skill for Claude Code and similar environments:
+- Default is JSON to stdout
+- `--plain` emits stable, line-based output
+- Errors go to stderr (JSON when not using `--plain`)
 
-- `skills/exa-search/SKILL.md`

@@ -1,4 +1,4 @@
-import { ApiError, type OutputMode } from "./api";
+import type { ApiError, OutputMode } from "./api";
 
 type ErrorPayload = {
   error: string;

@@ -1,5 +1,5 @@
 import { Command } from "@oclif/core";
-import { ApiError, requireApiKey, type OutputMode } from "./api";
+import { ApiError, type OutputMode, requireApiKey } from "./api";
 import { formatApiError, resolveOutputMode, writeError, writeJson } from "./output";
 
 export abstract class BaseCommand extends Command {

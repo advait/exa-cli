@@ -1,31 +1,30 @@
 # exa-cli
 
-Simple CLI wrapper around the Exa Search API.
+Simple CLI wrapper around the [Exa Search API](https://docs.exa.ai/reference/getting-started).
 
 Not to be confused with the `exa` terminal replacement for `ls`.
 
 This CLI is agent-first, non-interactive, and defaults to JSON output.
 
-## Install / Run
-
-If published to npm:
+## Run
 
 ```bash
 bunx exa-cli --help
 npx exa-cli --help
 ```
 
+For command-specific help and examples:
+
+```bash
+exa help
+exa help search
+exa -h
+```
+
 Local dev:
 
 ```bash
 bun run dev -- --help
-```
-
-Global install (optional):
-
-```bash
-npm install -g exa-cli
-exa --help
 ```
 
 ## Auth

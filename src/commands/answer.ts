@@ -4,7 +4,14 @@ import { BaseCommand } from "../lib/command.js";
 import { answerFlags, globalFlags } from "../lib/flags.js";
 
 export default class Answer extends BaseCommand {
-  static description = "Get an answer grounded by Exa search";
+  static description = "Get an answer grounded by Exa search (agent-first, JSON by default)";
+
+  static examples = [
+    'exa answer "What is the population of New York City?"',
+    'exa answer "state of solid-state batteries" --stream',
+    'exa answer "What is the capital of France?" --plain',
+    'exa answer "What is the capital of France?" --dry-run',
+  ];
 
   static args = {
     query: Args.string({

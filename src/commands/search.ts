@@ -11,7 +11,15 @@ const categoryMap: Record<string, string> = {
 };
 
 export default class Search extends BaseCommand {
-  static description = "Search the web with Exa";
+  static description = "Search the web with Exa (agent-first, JSON by default)";
+
+  static examples = [
+    'exa search "latest developments in quantum computing"',
+    'exa search "AI chips roadmap" --type deep --additional-query "GPU roadmap" --num-results 25',
+    'exa search "LLM hallucinations" --include-domain arxiv.org --text --text-max-characters 2000',
+    'exa search "openai" --num-results 3 --plain',
+    'exa search "openai" --num-results 1 --dry-run',
+  ];
 
   static args = {
     query: Args.string({

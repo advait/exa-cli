@@ -23,7 +23,8 @@
   },
   "oclif": {
     "commands": "./dist/commands",
-    "bin": "exa"
+    "bin": "exa",
+    "additionalHelpFlags": ["-h"]
   },
   "files": ["dist", "README.md", "docs/spec.md", "package.json"]
 }

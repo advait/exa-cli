@@ -123,6 +123,17 @@ Flags:
 - `--text` (include full text in citations)
 - `--stream` (stream SSE chunks)
 
+### `exa help`
+USAGE: `exa help [command]`
+
+Shows agent-first help with examples. Equivalent to `exa --help` or `exa -h`.
+
+## 12. Agent skill
+
+This repo includes an Agent Skill for Claude Code and similar environments:
+
+- `skills/exa-search/SKILL.md`: how to use the CLI, shared options, and examples.
+
 ## 11. Examples
 ```bash
 exa search "latest developments in quantum computing"

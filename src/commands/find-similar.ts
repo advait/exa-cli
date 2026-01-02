@@ -5,7 +5,14 @@ import { buildContentsOptions } from "../lib/contents.js";
 import { contentsFlags, findSimilarFlags, globalFlags } from "../lib/flags.js";
 
 export default class FindSimilar extends BaseCommand {
-  static description = "Find similar links to a URL";
+  static description = "Find similar links to a URL (agent-first, JSON by default)";
+
+  static examples = [
+    "exa find-similar https://arxiv.org/abs/2307.06435 --num-results 5 --text",
+    "exa find-similar https://example.com --exclude-domain example.com --summary",
+    "exa find-similar https://openai.com --num-results 3 --plain",
+    "exa find-similar https://openai.com --num-results 1 --dry-run",
+  ];
 
   static args = {
     url: Args.string({
